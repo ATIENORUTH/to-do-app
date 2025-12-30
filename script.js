@@ -3,27 +3,6 @@ const taskInput = document.getElementById('taskInput');
 const addBtn = document.getElementById('addBtn');
 const taskList = document.getElementById('taskList');
 
-const toggleThemeBtn = document.getElementById('toggleTheme');
-
-// Load saved theme
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-    toggleThemeBtn.textContent = '☀️ Light Mode';
-}
-
-// Toggle theme
-toggleThemeBtn.addEventListener('click', function () {
-    document.body.classList.toggle('dark');
-
-    if (document.body.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-        toggleThemeBtn.textContent = '☀️ Light Mode';
-    } else {
-        localStorage.setItem('theme', 'light');
-        toggleThemeBtn.textContent = '🌙 Dark Mode';
-    }
-});
-
 // Load tasks from localStorage when page loads
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
